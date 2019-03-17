@@ -14,11 +14,9 @@ using std::ofstream;
 
 using namespace Icarus::Visuals;
 
-CommandLine::CommandLine(int x, int y, int width, int height) {
-  noecho();
-  nocbreak();
-  raw();
+ofstream logs;
 
+CommandLine::CommandLine(int x, int y, int width, int height) {
   this->host        = newwin(height, width, y, x);
   this->listeners   = new list<CommandListener>;
   this->input       = "";
@@ -26,10 +24,17 @@ CommandLine::CommandLine(int x, int y, int width, int height) {
   this->historySize = 20;
   this->lines       = height;
   this->columns     = width;
+  this->cursor      = 0;
 
   nodelay(this->host, true);
+  raw();
+  keypad(this->host, true);
+  noecho();
+
 
   mvwaddstr(this->host, 0, 0, " $> ");
+
+  logs.open("logs.txt");
 }
 
 CommandLine::~CommandLine() {
@@ -62,21 +67,57 @@ void CommandLine::onThink() {
   wclear(this->host);
   mvwaddstr(this->host, 0, 0, (" $> " + this->input).c_str());
 
+  wmove(this->host, 0, this->cursor + 4);
+
   int character = wgetch(this->host);
   if (character == ERR) return;
 
   // BACKSPACE
-  if (character == 127) {
+  if (character == KEY_BACKSPACE && this->cursor > 0) {
     auto len = this->input.length() - 1;
     this->input = this->input.substr(0, len);
+    this->cursor--;
     return;
+  } else if (character == KEY_BACKSPACE) return;
+
+  if (character == KEY_F(1)) {
+    string a = this->input.substr(0, this->cursor);
+    string b = this->input.substr(this->cursor);
+    this->input = b + "<F1>" + a;
   }
+  
+  if (character == KEY_LEFT && this->cursor > 0) {
+    this->cursor--;
+    return;
+  } else if (character == KEY_LEFT) return;
+
+  if (character == KEY_RIGHT && this->cursor < this->input.length()) {
+    this->cursor++;
+    return;
+  } else if (character == KEY_RIGHT) return;
 
   if (character == '\n') {
     this->execute();
-  } else {
-    this->input.push_back((char)character);
+    this->cursor = 0;
+    return;
   }
+
+  if (this->cursor == this->input.length())  {
+    this->input.push_back((char)character);
+    this->cursor++;
+    return;
+  }
+
+  if (this->cursor == this->input.length()) {
+    this->input = (char)character + this->input;
+    this->cursor++;
+    return;
+  }
+
+  string a = this->input.substr(0, this->cursor);
+  string b = this->input.substr(this->cursor);
+  this->input = a + (char)character + b;
+  this->cursor++;
 }
 
 void CommandLine::addCommandListener(CommandListener listener) {

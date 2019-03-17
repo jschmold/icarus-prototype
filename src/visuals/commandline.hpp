@@ -21,6 +21,9 @@ namespace Icarus::Visuals {
   public:
     typedef void (*CommandListener)(string);
 
+    static const int CURSOR_BEGINNING = -1;
+    static const int CURSOR_END       = -2;
+
   private:
     string                 input;
     queue<string>          commands;
@@ -28,6 +31,7 @@ namespace Icarus::Visuals {
     WINDOW*                host;
     int                    lines;
     int                    columns;
+    int                    cursor;
 
     /**
      * ran when an enter character has been detected

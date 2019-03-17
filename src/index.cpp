@@ -32,8 +32,6 @@ void showHistory(string command) {
 
 int main(int argc, char* argv[]) {
   initscr();
-  noecho();
-
   int width, height;
   getmaxyx(stdscr, height, width);
 
