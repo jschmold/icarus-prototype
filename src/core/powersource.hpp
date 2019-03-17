@@ -1,4 +1,7 @@
+#pragma once 
 #include "../thinkable.hpp"
+#include "entity.hpp"
+#include "crafting.hpp"
 
 /**
  * Any source of power that can regenerate or decay over time.
@@ -7,7 +10,9 @@
  * time
  */
 namespace Icarus {
-  class PowerSource : IThinkable {
+  class PowerSource
+    : public IThinkable, public Entity
+  {
   private:
     /** The current amount of power */
     int amount;
@@ -22,7 +27,18 @@ namespace Icarus {
     double efficiency;
 
   public:
-    PowerSource(int amt, int max = 100, int rate = 0, double efficiency = 0.95);
+    int getAmount();
+    int getMax();
+    int getRate();
+
+    double getEfficiency();
+
+    PowerSource(string name,
+                int id,
+                int amt,
+                int max = 100,
+                int rate = 0,
+                double efficiency = 0.95);
 
     /**
      * Draw up to a certain amount of power from this Source. 

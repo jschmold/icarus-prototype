@@ -6,6 +6,8 @@ find_package(Curses REQUIRED curses)
 
 add_subdirectory(src/core)
 
+add_subdirectory(tests)
+
 add_executable(icarus.run
   src/index.cpp
 )

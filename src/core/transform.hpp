@@ -1,3 +1,5 @@
+#pragma once
+
 namespace Icarus {
   struct Transform {
     // The location, what blocks are taken up
