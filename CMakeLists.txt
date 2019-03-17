@@ -17,6 +17,8 @@ add_executable(icarus.run src/index.cpp)
 
 target_link_libraries(icarus.run
   curses
+  pthread
   icarus_core
+  icarus_visuals
 )
 

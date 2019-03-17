@@ -4,6 +4,7 @@ add_library(icarus_visuals
   context-window.hpp
   context-window.cpp
   event-log.hpp
+  event-log.cpp
   game-window.cpp
   game-window.hpp
   statusbar.hpp
