@@ -1,6 +1,6 @@
 add_library(icarus_core STATIC
-  bay.hpp
-  bay.cpp
+  structure.hpp
+  structure.cpp
   entity.hpp
   entity.cpp
   crafting.hpp

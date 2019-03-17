@@ -8,9 +8,7 @@ add_subdirectory(src/core)
 
 add_subdirectory(tests)
 
-add_executable(icarus.run
-  src/index.cpp
-)
+add_executable(icarus.run src/index.cpp)
 
 target_link_libraries(icarus.run
   curses
