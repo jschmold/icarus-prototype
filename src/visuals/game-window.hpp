@@ -2,7 +2,7 @@
 
 namespace Icarus::Visuals {
   class GameWindow {
-
+    
 
     GameWindow();
     ~GameWindow();

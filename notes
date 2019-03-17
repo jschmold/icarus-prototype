@@ -1,3 +1,4 @@
 Handling resize? Do I make an interface for this?
 Tab completion? Is that something I want to add for this?
 Frame-limiting: Solve this
+Command interpretation: You need to write this
