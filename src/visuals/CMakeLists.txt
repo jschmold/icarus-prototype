@@ -1,0 +1,13 @@
+add_library(icarus_visuals
+  commandline.hpp
+  commandline.cpp
+  context-window.hpp
+  context-window.cpp
+  event-log.hpp
+  game-window.cpp
+  game-window.hpp
+  statusbar.hpp
+  statusbar.cpp
+  window-utilities.cpp
+  window-utilities.hpp
+)
