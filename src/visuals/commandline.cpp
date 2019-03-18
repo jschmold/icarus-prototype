@@ -65,43 +65,92 @@ void CommandLine::execute() {
 void CommandLine::onThink() {
   wrefresh(this->host);
   wclear(this->host);
-  mvwaddstr(this->host, 0, 0, (" $> " + this->input).c_str());
-
+  wprintw(this->host, (" $> " + this->input).c_str());
   wmove(this->host, 0, this->cursor + 4);
 
   int character = wgetch(this->host);
   if (character == ERR) return;
 
-  // BACKSPACE
-  if (character == KEY_BACKSPACE && this->cursor > 0) {
+  switch(character) {
+    case KEY_BACKSPACE:
+      this->keyBackspace();    
+      return;
+    case KEY_LEFT:
+      this->keyLeft();
+      return;
+    case KEY_RIGHT:
+      this->keyRight();
+      return;
+    case '\n':
+      this->keyEnter();
+      return;
+    case KEY_DC:
+      this->keyDelete();
+      return;
+    default:
+      this->regularInput(character);
+      return;
+  }
+}
+
+void CommandLine::addCommandListener(CommandListener listener) {
+  this->listeners->push_front(listener);
+}
+
+void CommandLine::removeCommandListener(CommandListener listener) {
+  this->listeners->remove_if([listener](auto val) {
+    return val == listener;
+  });
+}
+
+void CommandLine::keyEnter() {
+  this->execute();
+  this->cursor = 0;
+}
+
+void CommandLine::keyBackspace() {
+  if (this->cursor > 0) {
     auto len = this->input.length() - 1;
     this->input = this->input.substr(0, len);
     this->cursor--;
     return;
-  } else if (character == KEY_BACKSPACE) return;
-
-  if (character == KEY_F(1)) {
-    string a = this->input.substr(0, this->cursor);
-    string b = this->input.substr(this->cursor);
-    this->input = b + "<F1>" + a;
   }
-  
-  if (character == KEY_LEFT && this->cursor > 0) {
-    this->cursor--;
-    return;
-  } else if (character == KEY_LEFT) return;
+}
 
-  if (character == KEY_RIGHT && this->cursor < this->input.length()) {
-    this->cursor++;
-    return;
-  } else if (character == KEY_RIGHT) return;
-
-  if (character == '\n') {
-    this->execute();
-    this->cursor = 0;
+void CommandLine::keyDelete() {
+  if (this->cursor == this->input.length()) {
     return;
   }
 
+  if (this->cursor == 0) {
+    this->input = this->input.substr(1);
+    return;
+  }
+
+  string a = this->input.substr(0, this->cursor);
+  string b = this->input.substr(this->cursor + 1);
+  this->input = a + b;
+}
+
+void CommandLine::keyLeft() {
+  if (this->cursor == 0) return;
+  this->cursor--;
+}
+
+void CommandLine::keyRight() {
+  if (this->cursor == this->input.length()) {
+    return;
+  }
+
+  if (this->cursor > this->input.length()) {
+    this->cursor = this->input.length();
+    return;
+  }
+
+  this->cursor++;
+}
+
+void CommandLine::regularInput(int character) {
   if (this->cursor == this->input.length())  {
     this->input.push_back((char)character);
     this->cursor++;
@@ -120,12 +169,3 @@ void CommandLine::onThink() {
   this->cursor++;
 }
 
-void CommandLine::addCommandListener(CommandListener listener) {
-  this->listeners->push_front(listener);
-}
-
-void CommandLine::removeCommandListener(CommandListener listener) {
-  this->listeners->remove_if([listener](auto val) {
-    return val == listener;
-  });
-}

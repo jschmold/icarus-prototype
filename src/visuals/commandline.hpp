@@ -48,5 +48,12 @@ namespace Icarus::Visuals {
     void onThink();
     void addCommandListener(CommandListener listener);
     void removeCommandListener(CommandListener listener);
+
+    void keyEnter();
+    void keyBackspace();
+    void keyDelete();
+    void keyLeft();
+    void keyRight();
+    void regularInput(int character);
   };
 }

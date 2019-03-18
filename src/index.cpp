@@ -3,31 +3,28 @@
 #include <ncurses.h>
 #include <chrono>
 #include <time.h>
+
 #include "visuals/commandline.hpp"
+#include "visuals/event-log.hpp"
 
 using Icarus::Visuals::CommandLine;
+using Icarus::Visuals::EventLog;
 
 using namespace std;
 
-#define FRAME_LENGTH 1666666.7
+#define FRAME_LENGTH 41666666.666
 
 bool run = true;
-WINDOW* logWindow;
-list<string>* history;
+EventLog* logger;
 
 void shouldExit(string command) {
   if (command == "close" || command == "exit") run = false;
 }
 
-
-void showHistory(string command) {
-  if (command != "history") return; 
-
-  wclear(logWindow);
-  mvwaddstr(logWindow, 0, 0, "");
-  for (auto iter = history->rbegin(); iter != history->rend(); ++iter) {
-    waddstr(logWindow, ((*iter) + '\n').c_str());
-  }
+void eventLogMessage(string command) {
+  if (command == "help") logger->write("Help requested");
+  
+  if (command == "construct") logger->write("Build something");
 }
 
 int main(int argc, char* argv[]) {
@@ -35,18 +32,20 @@ int main(int argc, char* argv[]) {
   int width, height;
   getmaxyx(stdscr, height, width);
 
-  CommandLine* cmd = new CommandLine(0, height - 2, width * 0.8, 2);
-  history = cmd->history;
-  cmd->addCommandListener(shouldExit);
-  cmd->addCommandListener(showHistory);
+  curs_set(0);
 
-  logWindow = newwin(height / 2, width * 0.2, 0, width * 0.8);
+  CommandLine* cmd = new CommandLine(0, height - 2, width * 0.75, 2);
+  EventLog* log = new EventLog(width * 0.75, 0, width * 0.2, height);
+  logger = log;
+
+  cmd->addCommandListener(shouldExit);
+  cmd->addCommandListener(eventLogMessage);
 
   while(run) {
     auto now = chrono::high_resolution_clock::now();
 
-    wrefresh(logWindow);
     cmd->onThink();
+    log->onThink();
 
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> duration = (end - now);

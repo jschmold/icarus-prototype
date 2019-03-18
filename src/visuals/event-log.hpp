@@ -2,9 +2,11 @@
 
 #include <curses.h>
 #include <string>
-#include "thinkable.hpp"
+#include <list>
+#include "../thinkable.hpp"
 
 using std::string;
+using std::list;
 
 /**
  * Event log: The stream of events above the command area to the
@@ -13,14 +15,16 @@ using std::string;
  *
  * Looks like "02:10 - the string"
  */
-namespace Icarus {
+namespace Icarus::Visuals {
   class EventLog : IThinkable {
+  private:
     /** A fixed-size based on window dimensions */
-    string* events;
-    
-    WINDOW* host;
+    list<string>*   events;
+    int             maxLogSize;
+    WINDOW*         host;
 
-    EventLog();
+  public:
+    EventLog(int x, int y, int width, int height);
     ~EventLog();
 
     /** This happens on every loop */
