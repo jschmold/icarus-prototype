@@ -1,10 +1,9 @@
-#include "commandline.hpp"
 #include <ncurses.h>
-#include "window-utilities.hpp"
 #include <string>
-#include <sstream>
-#include <fstream>
 #include <time.h>
+
+#include "window-utilities.hpp"
+#include "commandline.hpp"
 
 #define REGULAR_PAIR 1
 #define CURSOR_PAIR 2
@@ -12,15 +11,7 @@
 #define CURSOR COLOR_PAIR(CURSOR_PAIR)
 #define REGULAR COLOR_PAIR(REGULAR_PAIR)
 
-using std::istringstream;
-using std::stringstream;
-using std::endl;
-using std::getline;
-using std::ofstream;
-
 using namespace Icarus::Visuals;
-
-ofstream logs;
 
 CommandLine::CommandLine(int x, int y, int width, int height) {
   start_color();
@@ -39,8 +30,6 @@ CommandLine::CommandLine(int x, int y, int width, int height) {
   keypad(this->host, true);
   raw();
   noecho();
-
-  logs.open("logs.txt");
 }
 
 CommandLine::~CommandLine() {
@@ -193,7 +182,6 @@ void CommandLine::regularInput(int character) {
 void CommandLine::drawCursor() {
   char ch = this->input[this->cursor];
   if (!ch) ch = ' ';
-  logs << (char)ch << endl;
   wattron(this->host, CURSOR);
   mvwaddch(this->host, 0, this->cursor + 4, ch);
   wattroff(this->host, CURSOR);
