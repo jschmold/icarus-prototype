@@ -2,6 +2,10 @@
 #include <string>
 #include <time.h>
 
+#include <fstream>
+using std::ofstream;
+ofstream logs;
+
 #include "window-utilities.hpp"
 #include "commandline.hpp"
 
@@ -19,22 +23,25 @@ CommandLine::CommandLine(int x, int y, int width, int height) {
   init_pair(2, COLOR_BLACK, COLOR_GREEN);
 
   this->host        = newwin(height, width, y, x);
-  this->listeners   = new list<CommandListener>;
   this->input       = "";
   this->history     = new list<string>;
   this->historySize = 20;
+  this->commands    = new list<string>;
   this->lines       = height;
   this->columns     = width;
   this->cursor      = 0;
+
   nodelay(this->host, true);
   keypad(this->host, true);
   raw();
   noecho();
+
+
+  logs.open("logs.txt");
 }
 
 CommandLine::~CommandLine() {
   delwin(this->host);
-  delete this->listeners;
 }
 
 /**
@@ -42,14 +49,11 @@ CommandLine::~CommandLine() {
  * firing all listeners when a command is executed
  */
 void CommandLine::execute() {
-  for(auto iter = this->listeners->begin(); iter != this->listeners->end(); ++iter) {
-    (*iter)(this->input); // call the function
-  }
-
   if (this->history->size() == this->historySize) {
     this->history->pop_back();
   }
   this->history->push_front(this->input);
+  this->commands->push_front(this->input);
 
   this->input = "";
 }
@@ -80,22 +84,15 @@ void CommandLine::onThink() {
     case KEY_DC:
       this->keyDelete();
       return;
+    // happens when resizing
+    case 410: return;
     default:
       this->regularInput(character);
+      logs << character << std::endl;
       return;
   }
 
   wrefresh(this->host);
-}
-
-void CommandLine::addCommandListener(CommandListener listener) {
-  this->listeners->push_front(listener);
-}
-
-void CommandLine::removeCommandListener(CommandListener listener) {
-  this->listeners->remove_if([listener](auto val) {
-    return val == listener;
-  });
 }
 
 void CommandLine::keyEnter() {
@@ -182,7 +179,20 @@ void CommandLine::regularInput(int character) {
 void CommandLine::drawCursor() {
   char ch = this->input[this->cursor];
   if (!ch) ch = ' ';
+
   wattron(this->host, CURSOR);
   mvwaddch(this->host, 0, this->cursor + 4, ch);
   wattroff(this->host, CURSOR);
+}
+
+void CommandLine::resetCommands() {
+  delete this->commands;
+  this->commands = new list<string>;
+}
+
+void CommandLine::resize(int x, int y, int width, int height) {
+  werase(this->host);
+  wrefresh(this->host);
+  mvwin(this->host, y, x);
+  wresize(this->host, height, width);
 }

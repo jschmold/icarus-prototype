@@ -35,5 +35,6 @@ namespace Icarus::Visuals {
 
     /** This clears the events completely */
     void clear();
+    void resize(int x, int y, int width, int height);
   };
 }

@@ -11,7 +11,11 @@ add_subdirectory(src/visuals)
 
 add_subdirectory(tests)
 
-add_executable(icarus.run src/index.cpp)
+add_executable(icarus.run
+  src/index.cpp
+  src/engine.hpp
+  src/engine.cpp
+)
 
 target_link_libraries(icarus.run
   ncurses

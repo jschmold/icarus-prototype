@@ -51,3 +51,10 @@ void EventLog::clear() {
   delete this->events;
   this->events = new list<string>;
 }
+
+void EventLog::resize(int x, int y, int width, int height) {
+  werase(this->host);
+  wrefresh(this->host);
+  mvwin(this->host, y, x);
+  wresize(this->host, height, width);
+}

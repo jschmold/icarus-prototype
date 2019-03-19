@@ -4,13 +4,10 @@
 #include "../thinkable.hpp"
 #include <string>
 #include <list>
-#include <queue>
 #include <sstream>
 
 using std::string;
 using std::list;
-using std::queue;
-using std::stringstream;
 
 /**
  * Purpose: This is the command area where a player will enter
@@ -26,8 +23,6 @@ namespace Icarus::Visuals {
 
   private:
     string                 input;
-    queue<string>          commands;
-    list<CommandListener>* listeners;
     WINDOW*                host;
     int                    lines;
     int                    columns;
@@ -39,6 +34,7 @@ namespace Icarus::Visuals {
     void execute();
 
   public:
+    list<string>*          commands;
     list<string>*          history;
     int                    historySize;
 
@@ -46,9 +42,6 @@ namespace Icarus::Visuals {
     ~CommandLine();
 
     void onThink();
-    void addCommandListener(CommandListener listener);
-    void removeCommandListener(CommandListener listener);
-
     void keyEnter();
     void keyBackspace();
     void keyDelete();
@@ -56,5 +49,8 @@ namespace Icarus::Visuals {
     void keyRight();
     void regularInput(int character);
     void drawCursor();
+    void resetCommands();
+
+    void resize(int x, int y, int width, int height);
   };
 }
