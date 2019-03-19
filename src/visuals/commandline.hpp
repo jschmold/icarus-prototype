@@ -55,5 +55,6 @@ namespace Icarus::Visuals {
     void keyLeft();
     void keyRight();
     void regularInput(int character);
+    void drawCursor();
   };
 }

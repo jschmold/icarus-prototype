@@ -6,6 +6,12 @@
 #include <fstream>
 #include <time.h>
 
+#define REGULAR_PAIR 1
+#define CURSOR_PAIR 2
+
+#define CURSOR COLOR_PAIR(CURSOR_PAIR)
+#define REGULAR COLOR_PAIR(REGULAR_PAIR)
+
 using std::istringstream;
 using std::stringstream;
 using std::endl;
@@ -17,6 +23,10 @@ using namespace Icarus::Visuals;
 ofstream logs;
 
 CommandLine::CommandLine(int x, int y, int width, int height) {
+  start_color();
+  init_pair(1, COLOR_GREEN, COLOR_BLACK);
+  init_pair(2, COLOR_BLACK, COLOR_GREEN);
+
   this->host        = newwin(height, width, y, x);
   this->listeners   = new list<CommandListener>;
   this->input       = "";
@@ -25,14 +35,10 @@ CommandLine::CommandLine(int x, int y, int width, int height) {
   this->lines       = height;
   this->columns     = width;
   this->cursor      = 0;
-
   nodelay(this->host, true);
-  raw();
   keypad(this->host, true);
+  raw();
   noecho();
-
-
-  mvwaddstr(this->host, 0, 0, " $> ");
 
   logs.open("logs.txt");
 }
@@ -57,16 +63,14 @@ void CommandLine::execute() {
   this->history->push_front(this->input);
 
   this->input = "";
-
-  wclear(this->host);
-  mvwaddstr(this->host, 0, 0, " $> ");
 }
 
 void CommandLine::onThink() {
-  wrefresh(this->host);
   wclear(this->host);
+  wattron(this->host, REGULAR);
   wprintw(this->host, (" $> " + this->input).c_str());
-  wmove(this->host, 0, this->cursor + 4);
+  wattroff(this->host, REGULAR);
+  this->drawCursor();
 
   int character = wgetch(this->host);
   if (character == ERR) return;
@@ -91,6 +95,8 @@ void CommandLine::onThink() {
       this->regularInput(character);
       return;
   }
+
+  wrefresh(this->host);
 }
 
 void CommandLine::addCommandListener(CommandListener listener) {
@@ -109,12 +115,26 @@ void CommandLine::keyEnter() {
 }
 
 void CommandLine::keyBackspace() {
-  if (this->cursor > 0) {
+  if (this->cursor == 0) return;
+
+  if (this->cursor == 1) {
+    this->input = this->input.substr(1);
+    this->cursor--;
+    return;
+  }
+
+  if (this->cursor == this->input.length()) {
     auto len = this->input.length() - 1;
     this->input = this->input.substr(0, len);
     this->cursor--;
     return;
   }
+
+  string a = this->input.substr(0, this->cursor - 1);
+  string b = this->input.substr(this->cursor);
+  this->input = a + b;
+
+  this->cursor--;
 }
 
 void CommandLine::keyDelete() {
@@ -169,3 +189,12 @@ void CommandLine::regularInput(int character) {
   this->cursor++;
 }
 
+
+void CommandLine::drawCursor() {
+  char ch = this->input[this->cursor];
+  if (!ch) ch = ' ';
+  logs << (char)ch << endl;
+  wattron(this->host, CURSOR);
+  mvwaddch(this->host, 0, this->cursor + 4, ch);
+  wattroff(this->host, CURSOR);
+}
