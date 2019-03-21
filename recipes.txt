@@ -1,0 +1,166 @@
+Scrap
+  no recipe
+
+Water
+  no recipe
+
+Chemicals
+  no recipe
+
+Food
+  no recipe
+
+Lubricant
+  need:
+    2 chemical
+    1 water
+  produces:
+    2 lubricant
+
+Plastics
+  need:
+    1 Scrap
+  produces
+    1 Plastics
+
+Rubber
+  need: 
+    1 Scrap
+    1 Water
+  produces:
+    1 Rubber
+
+Crude Metal
+  need: 
+    4 Scrap
+  produces:
+    1 Crude Metal
+
+Insulation
+  need:
+    2 scrap
+  produces
+    1 insulation
+
+Glass
+  need: 
+    4 Scrap
+  produces:
+    1 Glass
+
+Conductors
+  need: 
+    4 crude metal
+    2 Scrap
+  produces: 
+    1 Conductors
+
+Metal
+  need:
+    5 crude metal
+  produces
+    1 metal
+
+Microchips
+  need
+    4 crude metal
+    2 Scrap
+    1 Conductors
+  procuces
+    2 microchips
+
+Wiring
+  need
+    3 crude metal
+    1 rubber
+    1 plastic
+  produces
+    2 wiring
+
+Display Panel
+  need
+    1 crude metal
+    3 plastic
+    1 rubber
+    1 microchip
+  produces
+    1 display panel
+
+Reinforced Glass
+  need
+    1 metal
+    1 scrap
+    1 glass
+  produces
+    1 reinforced glass
+
+Refined Metal
+  need
+    3 metal
+  produces
+    1 reinforced
+
+Super Conductors
+  need
+    2 conductors
+    2 refined metal
+    1 scrap
+  produces
+    1 super conductors
+
+Quantum Chips
+  need
+    5 super conductors
+    2 scrap
+    2 microchips
+  produces
+    2 quantum chips
+
+Plating
+  need
+    4 reinforced metal
+    1 scrap
+    2 insulation
+  produces
+    1 plating
+
+Quantum Cluster
+  need
+    5 quantum chips
+    1 scrap
+  produces
+    1 quantum cluster
+
+Hydraulics
+  need
+    1 refined metal
+    2 metal
+    1 scrap
+
+Solar Panel
+  need
+    1 water
+    1 lubricant
+    2 glass
+    1 metal
+  produces
+    1 solar panel
+
+Nuclear Rods
+  need: 
+    5 chemical
+    2 metal
+    4 water
+  produces
+    1 nuclear rod
+
+Thrusters
+  need
+    1 refined metal
+    1 metal
+    2 chemical
+    1 lubricant
+  produces
+    1 thruster
+
+
