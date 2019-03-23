@@ -4,7 +4,7 @@ add_executable(icarus_tests.run
   index.cpp
   testing.hpp
   testing.cpp
-  core/powersource.cpp
+  core/resource-generator.cpp
 )
 
 target_include_directories(icarus_tests.run PRIVATE ${../src})

@@ -1,8 +1,8 @@
 #include <cstdio>
-#include "./core/powersource.hpp"
+#include "./core/resource-generator.hpp"
 
 int main(int argc, char* argv[]) {
-  PowerSourceTests::run();
+  ResourceGeneratorTests::run();
   return 0;
 }
 

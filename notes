@@ -2,3 +2,4 @@ Handling resize? Do I make an interface for this?
 Tab completion? Is that something I want to add for this?
 Frame-limiting: Solve this
 Command interpretation: You need to write this
+Generator will produce odd quantities if even it is 1 per frame (24/s or more). Find a way to determine rate / second

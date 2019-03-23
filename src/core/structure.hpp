@@ -10,7 +10,10 @@ using std::string;
  */
 namespace Icarus {
   class Structure {
+    /** Where is this located?  */
     Transform transform;
+
+    /** What does it take to build this? */
     Recipe bayRecipe;
   };
 }

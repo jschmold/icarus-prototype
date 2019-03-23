@@ -11,7 +11,7 @@ void IcarusTesting::test(string test, action fn) {
     fn();
   } catch (std::logic_error e) {
     cout << "Failed." << endl;
-    cout << "    Logical error: " << endl << e.std::exception::what() << endl;
+    cout << "    Logical error: " << e.what() << endl;
   }
 
   cout << "Passed" << endl;

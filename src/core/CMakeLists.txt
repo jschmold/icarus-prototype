@@ -4,8 +4,11 @@ add_library(icarus_core STATIC
   entity.hpp
   entity.cpp
   crafting.hpp
-  powersource.hpp
-  powersource.cpp
+  crafting.cpp
+  resource-pool.hpp
+  resource-pool.cpp
+  resource-generator.hpp
+  resource-generator.cpp
   transform.hpp
 )
 
