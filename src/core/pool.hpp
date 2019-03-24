@@ -1,5 +1,4 @@
 #pragma once
-#include "entity.hpp"
 
 namespace Icarus {
   template <typename T>

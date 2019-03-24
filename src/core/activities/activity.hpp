@@ -2,9 +2,7 @@
 
 namespace Icarus::Activities {
   class Activity {
-  protected:
   public:
-
       /** Check whether or not the time is past the expected end */
       virtual bool isFinished() = 0;
 

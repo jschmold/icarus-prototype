@@ -1,12 +1,11 @@
 #pragma once
 
 #include <string>
-#include "pool.hpp"
-
+#include "../pool.hpp"
 
 using std::string;
 
-namespace Icarus {
+namespace Icarus::Entities {
   /**
    * An instance that represents a single kind of global Entity.
    *
@@ -31,9 +30,20 @@ namespace Icarus {
     static bool isPower(Entity res);
 
     // ------------------------------------------------------
-  
-    int    identifier;
+
+  private:  
+    /** What is it? */
+    int identifier;
+
+    /** What is it called? */
     string name;
+
+  public:
+    /** retrieve the name */
+    string getName();
+
+    /** get the entity identifier */
+    int getIdentifier();
 
     /** name, id, and enum type. Does not need to be fully qualified */
     Entity(string name, int id, int type);

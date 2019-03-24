@@ -1,6 +1,6 @@
 #include "entity.hpp"
 
-using namespace Icarus;
+using namespace Icarus::Entities;
 
 Entity::Entity(string name, int id) {
   this->identifier = id;
@@ -27,3 +27,13 @@ bool Entity::isLabour(Entity res) {
 bool Entity::isPower(Entity res) {
   return (res.identifier & POWER_GROUP) == POWER_GROUP;
 }
+
+string Entity::getName() {
+  return this->name;
+}
+
+int Entity::getIdentifier() {
+  return this->identifier;
+}
+
+

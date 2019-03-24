@@ -1,10 +1,11 @@
 #pragma once
 
 #include <string>
-#include "../entity.hpp"
+#include "../entities/entity.hpp"
 #include <chrono>
 #include "timed-activity.hpp"
 
+using namespace Icarus::Entities;
 using std::string;
 using std::pair;
 using std::chrono::system_clock;
@@ -34,6 +35,7 @@ namespace Icarus::Activities {
       /** What is being created */
       Entity* resource;
     public:
+
       Crafting(int duration, int quantity, Entity* entity);
 
       Ingredient claim();

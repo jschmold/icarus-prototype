@@ -48,6 +48,12 @@
 },
 
 {
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/resource-generator.cpp.o resource-generator.cpp",
+  "file": "resource-generator.cpp"
+},
+
+{
   "directory": "/home/jschmold/icarus/prototype",
   "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus.run.dir/src/index.cpp.o src/index.cpp",
   "file": "src/index.cpp"
@@ -78,15 +84,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/resource-generator.cpp.o resource-generator.cpp",
-  "file": "resource-generator.cpp"
-},
-
-{
   "directory": "/home/jschmold/icarus/prototype/src/core/activities",
-  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_activities.dir/activity.cpp.o activity.cpp",
-  "file": "activity.cpp"
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_activities.dir/timed-activity.cpp.o timed-activity.cpp",
+  "file": "timed-activity.cpp"
 },
 
 {
@@ -114,9 +114,21 @@
 },
 
 {
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c activities/construction.hpp",
+  "file": "activities/construction.hpp"
+},
+
+{
   "directory": "/home/jschmold/icarus/prototype",
   "command": "/usr/bin/clang++ -g -std=c++17 -c src/engine.hpp",
   "file": "src/engine.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c activities.hpp",
+  "file": "activities.hpp"
 },
 
 {
@@ -138,15 +150,33 @@
 },
 
 {
+  "directory": "/home/jschmold/icarus/prototype/src/core/activities",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c timed-activity.hpp",
+  "file": "timed-activity.hpp"
+},
+
+{
   "directory": "/home/jschmold/icarus/prototype/tests",
   "command": "/usr/bin/clang++ -g -std=c++17 -c core/resource-generator.hpp",
   "file": "core/resource-generator.hpp"
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/tests",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/resource-generator.hpp",
-  "file": "../src/core/resource-generator.hpp"
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c resource-generator.hpp",
+  "file": "resource-generator.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c structure.hpp",
+  "file": "structure.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c transform.hpp",
+  "file": "transform.hpp"
 },
 
 {

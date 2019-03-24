@@ -4,11 +4,9 @@ add_library(icarus_core STATIC
   pool.hpp
   structure.hpp
   structure.cpp
-  entity.hpp
-  entity.cpp
-  resource-generator.hpp
-  resource-generator.cpp
+  generator.hpp
   transform.hpp
 )
 
 add_subdirectory(activities)
+add_subdirectory(entities)

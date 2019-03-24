@@ -1,18 +1,19 @@
-#include "../../src/core/resource-generator.hpp"
-#include "resource-generator.hpp"
+#include "../../src/core/generator.hpp"
+#include "../../src/core/entities/entity.hpp"
+#include "generator.hpp"
 #include <iostream>
 #include <sstream>
 #include "../testing.hpp"
 
 using namespace std;
-using Icarus::Entity;
-using Icarus::ResourceGenerator;
+using Icarus::Entities::Entity;
+using Icarus::Generator;
 using IcarusTesting::test;
 
-namespace ResourceGeneratorTests {
+namespace GeneratorTests {
   void sourceGeneratesAccurately() {
     auto electricity = new Entity("Electricity", 0x0001, Entity::POWER_GROUP);
-    auto source = new ResourceGenerator(
+    auto source = new Generator(
       "Power Generator",
       electricity,
       500,
@@ -35,7 +36,7 @@ namespace ResourceGeneratorTests {
 
   void sourceDecaysAccurately() {
     auto oxygen = new Entity("Oxygen", 0x0001, Entity::POWER_GROUP);
-    auto source = new ResourceGenerator(
+    auto source = new Generator(
       "Lungs",
       oxygen,
       1000,
@@ -59,7 +60,7 @@ namespace ResourceGeneratorTests {
 
   void canDepleteCompletely() {
     auto oxygen = new Entity("Oxygen", 0x0001, Entity::POWER_GROUP);
-    auto source = new ResourceGenerator(
+    auto source = new Generator(
       "Lungs",
       oxygen,
       10,

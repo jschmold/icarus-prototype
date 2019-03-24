@@ -1,5 +1,5 @@
 #include "../../src/core/activities/crafting.hpp"
-#include "../../src/core/entity.hpp"
+#include "../../src/core/entities/entity.hpp"
 #include "crafting.hpp"
 #include "../testing.hpp"
 #include <chrono>

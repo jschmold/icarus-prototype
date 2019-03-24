@@ -1,8 +1,8 @@
-#include "../entity.hpp"
-#include "crafting.hpp"
 #include <iostream>
-
 #include <chrono>
+#include "crafting.hpp"
+#include "../entities/entity.hpp"
+
 
 using namespace Icarus::Activities;
 using namespace std::chrono;
