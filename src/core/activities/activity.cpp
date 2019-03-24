@@ -3,7 +3,7 @@
 
 using namespace std::chrono;
 
-using namespace Icarus;
+using namespace Icarus::Activities;
 
 Activity::Activity(int duration) {
   this->duration = duration;

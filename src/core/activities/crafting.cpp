@@ -1,14 +1,14 @@
-#include "entity.hpp"
+#include "../entity.hpp"
 #include "crafting.hpp"
 #include <iostream>
 
 #include <chrono>
 
-using namespace Icarus;
+using namespace Icarus::Activities;
 using namespace std::chrono;
 using std::runtime_error;
 
-CraftProcess::CraftProcess(
+Crafting::Crafting(
   int     duration,
   int     quantity,
   Entity* resource
@@ -18,9 +18,9 @@ CraftProcess::CraftProcess(
 }
 
 
-CraftProcess::~CraftProcess() { }
+Crafting::~Crafting() { }
 
-Ingredient CraftProcess::claim() {
+Ingredient Crafting::claim() {
   if (this->isFinished() == false) 
     throw runtime_error("Process is not finished yet");
   return Ingredient(this->quantity, this->resource);

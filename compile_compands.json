@@ -7,6 +7,12 @@
 
 {
   "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/core/crafting.cpp.o core/crafting.cpp",
+  "file": "core/crafting.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
   "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/testing.cpp.o testing.cpp",
   "file": "testing.cpp"
 },
@@ -30,15 +36,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/crafting.cpp.o crafting.cpp",
+  "directory": "/home/jschmold/icarus/prototype/src/core/activities",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_activities.dir/crafting.cpp.o crafting.cpp",
   "file": "crafting.cpp"
-},
-
-{
-  "directory": "/home/jschmold/icarus/prototype/tests",
-  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/core/craft-process.cpp.o core/craft-process.cpp",
-  "file": "core/craft-process.cpp"
 },
 
 {
@@ -84,15 +84,15 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/src/visuals",
-  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/game-window.cpp.o game-window.cpp",
-  "file": "game-window.cpp"
+  "directory": "/home/jschmold/icarus/prototype/src/core/activities",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_activities.dir/activity.cpp.o activity.cpp",
+  "file": "activity.cpp"
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/activity.cpp.o activity.cpp",
-  "file": "activity.cpp"
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/game-window.cpp.o game-window.cpp",
+  "file": "game-window.cpp"
 },
 
 {
@@ -102,21 +102,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c entity.hpp",
-  "file": "entity.hpp"
-},
-
-{
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c activity.hpp",
-  "file": "activity.hpp"
-},
-
-{
-  "directory": "/home/jschmold/icarus/prototype",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c src/engine.hpp",
-  "file": "src/engine.hpp"
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/entity.hpp",
+  "file": "../src/core/entity.hpp"
 },
 
 {
@@ -126,9 +114,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/tests",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c core/craft-process.hpp",
-  "file": "core/craft-process.hpp"
+  "directory": "/home/jschmold/icarus/prototype",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c src/engine.hpp",
+  "file": "src/engine.hpp"
 },
 
 {
@@ -138,9 +126,21 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c pool.hpp",
-  "file": "pool.hpp"
+  "directory": "/home/jschmold/icarus/prototype/src/core/activities",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c activity.hpp",
+  "file": "activity.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c core/crafting.hpp",
+  "file": "core/crafting.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c core/resource-generator.hpp",
+  "file": "core/resource-generator.hpp"
 },
 
 {
@@ -151,8 +151,8 @@
 
 {
   "directory": "/home/jschmold/icarus/prototype/tests",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c core/resource-generator.hpp",
-  "file": "core/resource-generator.hpp"
+  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/pool.hpp",
+  "file": "../src/core/pool.hpp"
 },
 
 {
@@ -168,9 +168,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c crafting.hpp",
-  "file": "crafting.hpp"
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/activities/crafting.hpp",
+  "file": "../src/core/activities/crafting.hpp"
 },
 
 {

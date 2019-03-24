@@ -6,12 +6,14 @@ add_executable(icarus_tests.run
   testing.cpp
   core/resource-generator.hpp
   core/resource-generator.cpp
-  core/craft-process.hpp
-  core/craft-process.cpp
+  core/crafting.hpp
+  core/crafting.cpp
 )
 
 target_include_directories(icarus_tests.run PRIVATE ${../src})
 
 target_link_libraries(icarus_tests.run 
   icarus_core
+  icarus_activities
+  icarus_visuals
 )

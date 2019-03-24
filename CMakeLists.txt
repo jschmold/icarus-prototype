@@ -21,6 +21,7 @@ target_link_libraries(icarus.run
   ncurses
   pthread
   icarus_core
+  icarus_activities
   icarus_visuals
 )
 

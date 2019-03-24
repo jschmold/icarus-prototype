@@ -1,14 +1,15 @@
 #pragma once
 #include "entity.hpp"
 #include "pool.hpp"
-#include "crafting.hpp"
+#include "activities/crafting.hpp"
 
 namespace Icarus {
 
   /**
    * Anything that generates a resource of any kind
    */
-  class ResourceGenerator : public Pool<Entity*> {
+  class ResourceGenerator
+  : public Pool<Entity*> {
   private:
 
     /** The rate at which the resource is being generated */

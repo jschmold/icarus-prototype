@@ -5,12 +5,9 @@ add_library(icarus_core STATIC
   structure.cpp
   entity.hpp
   entity.cpp
-  activity.hpp
-  activity.cpp
-  crafting.hpp
-  crafting.cpp
   resource-generator.hpp
   resource-generator.cpp
   transform.hpp
 )
 
+add_subdirectory(activities)

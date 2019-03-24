@@ -1,0 +1,3 @@
+namespace CraftingTests {
+  void run();
+}

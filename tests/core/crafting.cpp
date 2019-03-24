@@ -1,13 +1,14 @@
-#include "../../src/core/crafting.hpp"
+#include "../../src/core/activities/crafting.hpp"
 #include "../../src/core/entity.hpp"
-#include "craft-process.hpp"
+#include "crafting.hpp"
 #include "../testing.hpp"
 #include <chrono>
 #include <iostream>
 #include <sstream>
 
-using namespace CraftProcessTests;
+using namespace CraftingTests;
 using namespace Icarus;
+using namespace Icarus::Activities;
 using IcarusTesting::test;
 using namespace std;
 using namespace std::chrono;
@@ -15,7 +16,7 @@ using namespace std::chrono;
 void waitsLongEnough() {
   auto oxygen = new Entity("Oxygen", 0x0001, Entity::ITEM_GROUP);
    
-  auto process = new CraftProcess(300, 2, oxygen);
+  auto process = new Crafting(300, 2, oxygen);
   auto now = system_clock::now();
   auto timeout = now + milliseconds(320);
   process->execute();
@@ -32,7 +33,7 @@ void waitsLongEnough() {
 void claimCorrect() {
   auto oxygen = new Entity("Oxygen", 0x0001, Entity::ITEM_GROUP);
    
-  auto process = new CraftProcess(300, 30, oxygen);
+  auto process = new Crafting(300, 30, oxygen);
   auto now = system_clock::now();
   auto timeout = now + milliseconds(320);
   process->execute();
@@ -50,7 +51,7 @@ void claimCorrect() {
   delete process;
 }
 
-void CraftProcessTests::run() {
+void CraftingTests::run() {
   cout << "Crafting Process Tests" << endl;
   test("Takes long enough", waitsLongEnough);
   test("Claims correct amount", claimCorrect);

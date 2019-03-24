@@ -4,7 +4,7 @@
 
 using namespace std::chrono;
 
-namespace Icarus {
+namespace Icarus::Activities {
 
 
   class Activity {
