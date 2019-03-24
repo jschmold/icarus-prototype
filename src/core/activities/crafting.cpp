@@ -12,13 +12,10 @@ Crafting::Crafting(
   int     duration,
   int     quantity,
   Entity* resource
-) : Activity(duration) {
+) : TimedActivity(duration) {
   this->quantity   = quantity;
   this->resource   = resource;
 }
-
-
-Crafting::~Crafting() { }
 
 Ingredient Crafting::claim() {
   if (this->isFinished() == false) 

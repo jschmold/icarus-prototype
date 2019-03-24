@@ -3,7 +3,7 @@
 #include <string>
 #include "../entity.hpp"
 #include <chrono>
-#include "activity.hpp"
+#include "timed-activity.hpp"
 
 using std::string;
 using std::pair;
@@ -26,7 +26,7 @@ namespace Icarus::Activities {
   using Recipe     = Ingredient*;
 
   class Crafting
-  : public Activity {
+  : public TimedActivity {
     private:
       /** how much of the resource are we making */
       int quantity;
@@ -35,7 +35,6 @@ namespace Icarus::Activities {
       Entity* resource;
     public:
       Crafting(int duration, int quantity, Entity* entity);
-      ~Crafting();
 
       Ingredient claim();
   };

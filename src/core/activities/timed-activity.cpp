@@ -1,27 +1,32 @@
-#include "activity.hpp"
+#include "timed-activity.hpp"
 #include <chrono>
 
 using namespace std::chrono;
 
 using namespace Icarus::Activities;
 
-Activity::Activity(int duration) {
+TimedActivity::TimedActivity(int duration) {
   this->duration = duration;
 }
 
-Activity::~Activity() {
+TimedActivity::~TimedActivity() {
   if (this->end != nullptr) delete this->end;
 }
 
-void Activity::execute( ) {
+double TimedActivity::getProgress() {
+  auto now = system_clock::now() - *this->start;
+  auto total = *this->end - *this->start;
+  return now / total; 
+}
+
+void TimedActivity::execute( ) {
   this->end  = new time_point<system_clock>(
     system_clock::now() + std::chrono::milliseconds((int)this->duration)
   );
 }
 
-bool Activity::isFinished() {
+bool TimedActivity::isFinished() {
   return this->end != nullptr
     && system_clock::now() > *this->end;
 }
-
 
