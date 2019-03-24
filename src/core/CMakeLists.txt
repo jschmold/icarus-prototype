@@ -8,5 +8,3 @@ add_library(icarus_core STATIC
   transform.hpp
 )
 
-add_subdirectory(activities)
-add_subdirectory(entities)

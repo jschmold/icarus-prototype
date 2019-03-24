@@ -51,5 +51,9 @@ namespace Icarus {
       this->amount -= amt;
       return amt;
     }
+
+    int add(int amt) {
+      return this->draw(-amt);
+    }
   };
 }

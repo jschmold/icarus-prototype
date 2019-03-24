@@ -7,14 +7,17 @@ set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set (CMAKE_CXX_EXTENSIONS OFF)
 
 add_subdirectory(src/core)
+add_subdirectory(src/core/activities)
+add_subdirectory(src/core/entities)
 add_subdirectory(src/visuals)
-
 add_subdirectory(tests)
 
 add_executable(icarus.run
   src/index.cpp
   src/engine.hpp
   src/engine.cpp
+  src/thinkable.hpp
+  src/tickable.hpp
 )
 
 target_link_libraries(icarus.run
