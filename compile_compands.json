@@ -1,11 +1,5 @@
 [
 {
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/timed-process.cpp.o timed-process.cpp",
-  "file": "timed-process.cpp"
-},
-
-{
   "directory": "/home/jschmold/icarus/prototype/tests",
   "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/index.cpp.o index.cpp",
   "file": "index.cpp"
@@ -96,6 +90,12 @@
 },
 
 {
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/activity.cpp.o activity.cpp",
+  "file": "activity.cpp"
+},
+
+{
   "directory": "/home/jschmold/icarus/prototype/src/visuals",
   "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/context-window.cpp.o context-window.cpp",
   "file": "context-window.cpp"
@@ -108,9 +108,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c src/visuals/event-log.hpp",
-  "file": "src/visuals/event-log.hpp"
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c activity.hpp",
+  "file": "activity.hpp"
 },
 
 {
@@ -120,9 +120,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/tests",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/resource-generator.hpp",
-  "file": "../src/core/resource-generator.hpp"
+  "directory": "/home/jschmold/icarus/prototype",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c src/visuals/event-log.hpp",
+  "file": "src/visuals/event-log.hpp"
 },
 
 {
@@ -144,9 +144,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/src/core",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c timed-process.hpp",
-  "file": "timed-process.hpp"
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/resource-generator.hpp",
+  "file": "../src/core/resource-generator.hpp"
 },
 
 {

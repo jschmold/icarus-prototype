@@ -3,7 +3,7 @@
 #include <string>
 #include "entity.hpp"
 #include <chrono>
-#include "timed-process.hpp"
+#include "activity.hpp"
 
 using std::string;
 using std::pair;
@@ -24,7 +24,7 @@ namespace Icarus {
   using Ingredient = pair<int, Entity*>;
   using Recipe     = Ingredient*;
 
-  class CraftProcess : public TimedProcess {
+  class CraftProcess : public Activity {
     private:
       /** how much of the resource are we making */
       int quantity;

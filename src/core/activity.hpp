@@ -5,8 +5,12 @@
 using namespace std::chrono;
 
 namespace Icarus {
-  class TimedProcess {
+
+
+  class Activity {
   protected:
+
+      system_clock::time_point* start = nullptr;
 
       /** When the crafting process is to be ended */
       system_clock::time_point* end = nullptr;
@@ -15,15 +19,17 @@ namespace Icarus {
       int duration;
 
   public:
-      
+
       /** Check whether or not the time is past the expected end */
       bool isFinished();
+
+      /** get the percent completion */
+      double getProgress();
 
       /** start the crafting processs */
       void execute();
 
-      TimedProcess(int duration);
-      ~TimedProcess();
-
+      Activity(int duration);
+      ~Activity();
   };
 }

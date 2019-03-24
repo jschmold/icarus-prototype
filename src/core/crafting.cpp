@@ -12,7 +12,7 @@ CraftProcess::CraftProcess(
   int     duration,
   int     quantity,
   Entity* resource
-) : TimedProcess(duration) {
+) : Activity(duration) {
   this->quantity   = quantity;
   this->resource   = resource;
 }

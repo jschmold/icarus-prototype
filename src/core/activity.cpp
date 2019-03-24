@@ -1,25 +1,25 @@
-#include "timed-process.hpp"
+#include "activity.hpp"
 #include <chrono>
 
 using namespace std::chrono;
 
 using namespace Icarus;
 
-TimedProcess::TimedProcess(int duration) {
+Activity::Activity(int duration) {
   this->duration = duration;
 }
 
-TimedProcess::~TimedProcess() {
+Activity::~Activity() {
   if (this->end != nullptr) delete this->end;
 }
 
-void TimedProcess::execute( ) {
+void Activity::execute( ) {
   this->end  = new time_point<system_clock>(
     system_clock::now() + std::chrono::milliseconds((int)this->duration)
   );
 }
 
-bool TimedProcess::isFinished() {
+bool Activity::isFinished() {
   return this->end != nullptr
     && system_clock::now() > *this->end;
 }

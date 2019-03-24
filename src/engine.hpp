@@ -15,6 +15,7 @@ namespace Icarus {
   class Engine {
     EventLog* logSystem;
     CommandLine* cmd;
+
     double refreshRate;
     bool exit = false;
 
@@ -31,6 +32,5 @@ namespace Icarus {
 
     void run();
     void detectResize();
-
   };
 }
