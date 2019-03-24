@@ -1,0 +1,169 @@
+[
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/index.cpp.o index.cpp",
+  "file": "index.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/testing.cpp.o testing.cpp",
+  "file": "testing.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/structure.cpp.o structure.cpp",
+  "file": "structure.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/commandline.cpp.o commandline.cpp",
+  "file": "commandline.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/entity.cpp.o entity.cpp",
+  "file": "entity.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/crafting.cpp.o crafting.cpp",
+  "file": "crafting.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/core/craft-process.cpp.o core/craft-process.cpp",
+  "file": "core/craft-process.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/statusbar.cpp.o statusbar.cpp",
+  "file": "statusbar.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus.run.dir/src/index.cpp.o src/index.cpp",
+  "file": "src/index.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus.run.dir/src/engine.cpp.o src/engine.cpp",
+  "file": "src/engine.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/event-log.cpp.o event-log.cpp",
+  "file": "event-log.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/core/resource-generator.cpp.o core/resource-generator.cpp",
+  "file": "core/resource-generator.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/window-utilities.cpp.o window-utilities.cpp",
+  "file": "window-utilities.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/resource-generator.cpp.o resource-generator.cpp",
+  "file": "resource-generator.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/game-window.cpp.o game-window.cpp",
+  "file": "game-window.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_visuals.dir/context-window.cpp.o context-window.cpp",
+  "file": "context-window.cpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c entity.hpp",
+  "file": "entity.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c src/visuals/event-log.hpp",
+  "file": "src/visuals/event-log.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c src/engine.hpp",
+  "file": "src/engine.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c core/craft-process.hpp",
+  "file": "core/craft-process.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c testing.hpp",
+  "file": "testing.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c pool.hpp",
+  "file": "pool.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/resource-generator.hpp",
+  "file": "../src/core/resource-generator.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c core/resource-generator.hpp",
+  "file": "core/resource-generator.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c commandline.hpp",
+  "file": "commandline.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c window-utilities.hpp",
+  "file": "window-utilities.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c crafting.hpp",
+  "file": "crafting.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/src/visuals",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c ../thinkable.hpp",
+  "file": "../thinkable.hpp"
+}
+]

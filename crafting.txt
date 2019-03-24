@@ -1,0 +1,15 @@
+Crafting
+
+- The ability to draw from any EntityPool
+- The ability to add any EntityPool to draw from
+- Take a specified amount of time (frames? actual time? calculate finish time in separate thread?)
+- To indicate # of Entity consumed (# / Max Oxygen, list of pools?)
+
+
+Representing this as an active task consuming a slot in a bay? Last time I used timeouts and async,
+not exactly possible this time
+
+Separate concerns:
+  - The actual delay
+  - the consumption of resources
+  - the return of new resources

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include "pool.hpp"
+
 
 using std::string;
 
@@ -39,4 +41,6 @@ namespace Icarus {
     /** Name and fully qualified id */
     Entity(string name, int id);
   };
+
+  using EntityPool = Pool<Entity*>;
 }

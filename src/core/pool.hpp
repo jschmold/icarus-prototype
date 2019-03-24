@@ -2,7 +2,8 @@
 #include "entity.hpp"
 
 namespace Icarus {
-  class ResourcePool {
+  template <typename T>
+  class Pool {
   protected:
     /** How much is currently available */
     int amount;
@@ -10,11 +11,21 @@ namespace Icarus {
     /** the maximum amount this can store */
     int max;
 
-  public:
-    int getAmount();
-    int getMax();
+    T contentType;
 
-    ResourcePool(int amt, int max);
+  public:
+    int getAmount() {
+      return this->amount;
+    }
+    int getMax() {
+      return this->max;
+    }
+
+    Pool(int amt, int max, T content) {
+      this->amount = amt;
+      this->max    = max;
+      this->contentType = content;
+    }
 
     /**
      * Draw up to a certain amount of Resource from this. 
@@ -31,6 +42,15 @@ namespace Icarus {
      *
      * @param int
      */
-    int draw(int amt);
+    int draw(int amt) {
+      int ceiling = this->amount;
+      if (amt > ceiling) {
+        this->amount = 0;
+        return ceiling;
+      }
+
+      this->amount -= amt;
+      return amt;
+    }
   };
 }

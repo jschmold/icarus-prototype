@@ -1,6 +1,6 @@
 #pragma once
 #include "entity.hpp"
-#include "resource-pool.hpp"
+#include "pool.hpp"
 #include "crafting.hpp"
 
 namespace Icarus {
@@ -8,7 +8,7 @@ namespace Icarus {
   /**
    * Anything that generates a resource of any kind
    */
-  class ResourceGenerator : public ResourcePool {
+  class ResourceGenerator : public Pool<Entity*> {
   private:
 
     /** The rate at which the resource is being generated */

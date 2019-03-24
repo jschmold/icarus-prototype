@@ -3,3 +3,4 @@ Tab completion? Is that something I want to add for this?
 Frame-limiting: Solve this
 Command interpretation: You need to write this
 Generator will produce odd quantities if even it is 1 per frame (24/s or more). Find a way to determine rate / second
+Perhaps there's a way to use the tickrate and a utility function to calculate multiples of FRAME_LIMIT for time

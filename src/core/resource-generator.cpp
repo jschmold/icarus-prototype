@@ -12,7 +12,7 @@ ResourceGenerator::ResourceGenerator(
   int     amt,
   int     max,
   int     rate
-) : ResourcePool(amt, max) {
+) : Pool<Entity*>(amt, max, res) {
   this->name     = name;
   this->resource = res;
   this->rate     = rate;

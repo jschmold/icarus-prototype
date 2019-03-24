@@ -1,0 +1,10 @@
+#! /usr/bin/bash
+
+function runBuild () {
+  echo $($1)/make clean && $($1)/bear make && compdb -p $($1) list >> $($1)/compile_commands.json
+}
+
+runBuild src/core
+runBuild src/visuals
+runBuild test
+
