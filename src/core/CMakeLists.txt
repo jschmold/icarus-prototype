@@ -4,6 +4,8 @@ add_library(icarus_core STATIC
   structure.cpp
   entity.hpp
   entity.cpp
+  timed-process.hpp
+  timed-process.cpp
   crafting.hpp
   crafting.cpp
   resource-generator.hpp

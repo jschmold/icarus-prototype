@@ -53,5 +53,5 @@ void claimCorrect() {
 void CraftProcessTests::run() {
   cout << "Crafting Process Tests" << endl;
   test("Takes long enough", waitsLongEnough);
-  test("claims correct amount", claimCorrect);
+  test("Claims correct amount", claimCorrect);
 }

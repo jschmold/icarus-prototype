@@ -1,5 +1,11 @@
 [
 {
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_core.dir/timed-process.cpp.o timed-process.cpp",
+  "file": "timed-process.cpp"
+},
+
+{
   "directory": "/home/jschmold/icarus/prototype/tests",
   "command": "/usr/bin/clang++ -c -g -std=c++17 -o CMakeFiles/icarus_tests.run.dir/index.cpp.o index.cpp",
   "file": "index.cpp"
@@ -115,6 +121,12 @@
 
 {
   "directory": "/home/jschmold/icarus/prototype/tests",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/resource-generator.hpp",
+  "file": "../src/core/resource-generator.hpp"
+},
+
+{
+  "directory": "/home/jschmold/icarus/prototype/tests",
   "command": "/usr/bin/clang++ -g -std=c++17 -c core/craft-process.hpp",
   "file": "core/craft-process.hpp"
 },
@@ -132,9 +144,9 @@
 },
 
 {
-  "directory": "/home/jschmold/icarus/prototype/tests",
-  "command": "/usr/bin/clang++ -g -std=c++17 -c ../src/core/resource-generator.hpp",
-  "file": "../src/core/resource-generator.hpp"
+  "directory": "/home/jschmold/icarus/prototype/src/core",
+  "command": "/usr/bin/clang++ -g -std=c++17 -c timed-process.hpp",
+  "file": "timed-process.hpp"
 },
 
 {
