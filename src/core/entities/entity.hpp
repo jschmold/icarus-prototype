@@ -1,9 +1,11 @@
 #pragma once
 
 #include <string>
+#include <list>
 #include "../pool.hpp"
 
 using std::string;
+using std::list;
 
 namespace Icarus::Entities {
   /**
@@ -53,4 +55,7 @@ namespace Icarus::Entities {
   };
 
   using EntityPool = Pool<Entity*>;
+
+  using InventorySlot = Pool<Entity*>;
+  using Inventory = list<InventorySlot>;
 }

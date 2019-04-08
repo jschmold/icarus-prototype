@@ -1,15 +1,25 @@
-Crafting
+Dimensions of a disc: 
+  Represented in terms of DU, or 25m^2
+  A single grid location is 25*25*3m (3m is ceiling height)
 
-- The ability to draw from any EntityPool
-- The ability to add any EntityPool to draw from
-- Take a specified amount of time (frames? actual time? calculate finish time in separate thread?)
-- To indicate # of Entity consumed (# / Max Oxygen, list of pools?)
+When crafting, determine the width and height in units (DU)
+100 * 20 DU has the dimensions of 2500m * 500m
+
+Each DU of disc requires 
+To create 1 square meter of space, you need
+140kg of metal,
+48kg of glass,
+3kg of wiring
+
+750,000 kg of metal per DU
+225,000 kg of glass per DU
+  5,000 kg of wires per DU
+--------------------------
+980,000 kg 
 
 
-Representing this as an active task consuming a slot in a bay? Last time I used timeouts and async,
-not exactly possible this time
+metals kg/m^3 = 25*25*3
 
-Separate concerns:
-  - The actual delay
-  - the consumption of resources
-  - the return of new resources
+100kg * 25 = 2500 kg of metal per DU
+
+2000 DU = 5,000,000 kg of metal

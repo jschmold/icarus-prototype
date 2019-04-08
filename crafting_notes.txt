@@ -1,0 +1,125 @@
+Crafting
+
+- The ability to draw from any EntityPool
+- The ability to add any EntityPool to draw from
+- Take a specified amount of time (frames? actual time? calculate finish time in separate thread?)
+- To indicate # of Entity consumed (# / Max Oxygen, list of pools?)
+
+
+Representing this as an active task consuming a slot in a bay? Last time I used timeouts and async,
+not exactly possible this time
+
+Separate concerns:
+  - The actual delay
+  - the consumption of resources
+  - the return of new resources
+
+Perhaps "structure" is too general.
+-- Coordinates? Spire:Disc:Bay
+
+Spires have discs
+  0001::
+
+Discs have bays/section
+  :0001:
+
+Bays have stations
+  0001:0001:0001
+
+stations are entities, which means they can be crafted
+
+Spires and Discs have a few things in common:
+  - They house bays
+  - They 
+
+Can't they be virtual? Do they even need to exist? Perhaps they can just be data
+
+Spire:
+ - Disc Slots
+
+Discs: 
+ - Volume
+ - Capacity (Force N, Combined Mass * G Forces)
+ - A single disc houses roughly 5kg/m^2 stuff, which 
+ equates to approximately 1.47e8 N per disc at max
+ capacity, which has a radius of 3.98e1 km
+
+ - Glass formula:
+  - Glass Volume = ((wPI)/2) * QL
+   - z = Ceiling Height
+   - w = Floor width
+   - Q = glass thickness in m
+  - glass weight per m^3 is yet to be determined
+   So (500m * PI) / 2 = 7.85e2
+   7.85e2 * 0.5m (thickness) * 2500m (length) ~= 9.8e5
+   Gorilla glass is 2.39e-1 / m^3, so 9.8e5 * 2.39e-1 = total weight, 2.34e5
+
+   SO 2.39e-1 kg / m3
+
+  
+
+
+ - Materials to build:
+ +-------------+
+ | 100 kg/m^3  | metals
+ |  30 kg/m^3  | glass
+ |+ 10 kg/m^3  | wiring
+ |-------------|
+ | 190   kg/m^3| total mats / m^3
+ +-------------+ 
+
+  w       C     h
+ 500m * 2500m * 3m = 3,750,000m3 disc * 3.9 kg of materials
+
+ 3.4 kg * 3.75e6 = 1.28e7 kg of metal
+
+ 1.28e7 * 9.81 = N 
+               = 1.26e8
+
+ Material Cost = <MAT> * 
+ Material cost = (sum mats) * (width * circum)
+ Force capacity = (width * circum * 15) * 9.81
+ Mass Force = (mass * gmult * 9.81)
+ 
+ 1.28e7 * (0.2 * 9.81) = 
+
+ I did the math, and 1 cubic metre of metals can safely hold 1000kg of
+ mass. A good buffer is 15kg capacity per square metre
+
+
+ Mass capacity = surface area * 15
+ Volume capacity = surface area * ceiling height
+ Material Cost = Surface Area * Sum of Materials in Kg/m^2
+ Surface Area = Circumference * Width
+
+ 
+ let materialCost = (matWeightSum, surf) => matWeightSum * surface;
+ let surface = (width, height) => width * height;
+ let forceCap = (gmult, surface) => gmult * 9.81 * volume;
+ let volumeCap = (surface) => (surface * 5)
+
+                            how big ?        grav * kg * 1m3 (force capacity per cubic metre)
+ Disc's Maximum Force  = (circum * width) * (9.81 * 15 * 1)
+ Disc's Maximum Volume = (Half the area of width) * circumference = max volume (theoretical)
+ Disc's Current Volume = sum of everything in mass
+ Disc's Current Force  = total mass * gmult * 9.81
+ M = 1.8*2*0.3m cubed
+                                           avg man dimn       30%
+  we don't care about height, because people don't stand on each other
+
+ 500 * 2500 = 1,250,000, a whole disc
+ 20M * 175, reasoning: People would take up 100 cubed, then amenities and other stuff would add up to ~175 cubic meters
+ Disc's Maximum Popl   = (total volume 2d of living quarters / (2m * 0.3 * 175))) * 0.30
+
+
+Discs:
+  Small: 4.91e7 N, 500m x 2.5km x 3m (width, circum, depth): 1.05e6 Kg metals
+  Medium: 
+
+Bay:
+  Transform:
+    SpireId: 0001
+    DiscId:  000f
+    Identifier: 002f
+  Stations: Entity[]
+

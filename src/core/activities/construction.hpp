@@ -14,12 +14,15 @@ namespace Icarus::Activities {
     Recipe* recipe;
 
     /** Where do the materials come from? */
-    Pool<Entity*> materials;
+    Inventory* materials;
 
     /** Who is working on this? */
-    Pool<Entity*> workers;
+    Inventory* workers;
 
   public:
+    ConstructionActivity(int maxWorkers, int maxMaterials);
+    ~ConstructionActivity();
+
     bool isFinished();
 
     /** get the percent completion */

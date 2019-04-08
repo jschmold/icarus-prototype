@@ -4,4 +4,6 @@ add_library(icarus_activities STATIC
   timed-activity.cpp
   crafting.hpp
   crafting.cpp
+  construction.hpp
+  construction.cpp
 )

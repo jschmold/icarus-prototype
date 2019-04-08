@@ -23,9 +23,6 @@ using std::chrono::system_clock;
  */
 namespace Icarus::Activities {
 
-  using Ingredient = pair<int, Entity*>;
-  using Recipe     = Ingredient*;
-
   class Crafting
   : public TimedActivity {
     private:

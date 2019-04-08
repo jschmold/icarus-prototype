@@ -17,9 +17,15 @@ using Icarus::Activities::Recipe;
  */
 namespace Icarus {
 
+  /**
+   * This is a live instance of an actual structure
+   */
   class Structure {
   public:
     class Definition;
+
+    /** First: current, Second: max */
+    using Integrity = pair<double, double>;
 
     /**
      * Just does the building. It is not the responsibility of this function
@@ -31,13 +37,27 @@ namespace Icarus {
     /** Where is this located?  */
     Transform transform;
     list<Activities::Activity>* Activities;
+
     string name;
-    double integrity;
+    Integrity integrity;
 
-    Structure(string name, Transform location);
+    Structure(string name,
+              Transform location,
+              double integrity);
 
+  public:
+    void repair(double amt);
+    void damage(double amt);
+
+    /** Less than 15% integrity */
+    bool isCritical();
   };
 
+  /**
+   * The game's package data for kinds will load into
+   * this data type for structures, and initialize
+   * into Structure types based on a save-game
+   */
   class Structure::Definition {
   public:
     /** What does it take to make this structure? */
