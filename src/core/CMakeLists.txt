@@ -8,3 +8,6 @@ add_library(icarus_core STATIC
   ingredient.cpp
 )
 
+
+add_subdirectory(activities)
+add_subdirectory(entities)

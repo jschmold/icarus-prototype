@@ -9,7 +9,7 @@
 using std::string;
 using std::list;
 
-using Icarus::Activities::Ingredient;
+using Icarus::Core::Ingredient;
 using Icarus::Activities::Recipe;
 
 /**
